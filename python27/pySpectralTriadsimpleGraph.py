@@ -1,10 +1,3 @@
-"""
-Author: 	HWReverse
-Twitter: 	@r0_hw aka HWR0
-GitHub:		https://github.com/hwreverse/
-
-"""
-
 import serial  
 import numpy   
 import matplotlib.pyplot as plt  
@@ -14,6 +7,10 @@ from serial import Serial
  
 spectreData = serial.Serial("COM7", 115200) #Cchange COM7 to the right port - under Linux it will look more like "/dev/ttyACMx"... 
  
+
+i2c = board.I2C()
+spectreData = AS726x_I2C(i2c)
+
 loop=True
 
 spectreReadings = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,] 
